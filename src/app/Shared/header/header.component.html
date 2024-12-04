@@ -1,0 +1,23 @@
+<header [class]="theme == 'light' ? 'light' : ''">
+    <div class="header-content" [class.type2]="headerType == 2">
+        <div [class]="opened ? 'button-header opened' : 'button-header'" [class.type2]="headerType == 2" (click)="opened ? opened = false : opened = true; startOpened = true">
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <div class="line-3"></div>
+        </div>
+        <select [(ngModel)]="language" (change)="switchLanguage()" [style]="{'display': startOpened ? 'flex' : 'none'}" [class]="opened ? 'show' : 'hideMenu'">
+            <option>PT</option>
+            <option>EN</option>
+        </select>
+        <div class="menu-list">
+            <p class="toggle-symbol" [class.opened]="opened"  [style.display]="headerType == 2 ? 'none' : 'flex'" (click)="OpenHeader()"></p>
+            <ul [class]="opened ? 'show' : 'hideMenu'" [style]="{'display': startOpened ? 'flex' : 'none'}">
+              <li routerLink="/home">{{ 'INICIO' | translate }}</li>
+              <li routerLink="/sobre">{{ 'SOBRE' | translate }}</li>
+              <li routerLink="/diretores">{{ 'DIRETORES' | translate }}</li>
+              <li routerLink="/contato">{{'CONTATO' | translate }}</li>
+              <li routerLink="/conteudo">{{'CONTEUDO' | translate }}</li>
+            </ul>
+        </div>
+    </div>
+</header>

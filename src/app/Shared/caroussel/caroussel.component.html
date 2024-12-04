@@ -1,0 +1,24 @@
+<div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-inner">
+      @for (item of media; track $index) {
+        <div [class]="item === media[0] ? 'carousel-item active w-100' : 'carousel-item'" (click)="selectedVideo.emit(item.src)">
+          <div class="iframe">
+            <video id="video-{{ $index }}" [routerLink]="item.routerLink" preload="none" style="opacity: 0.8;" [autoplay]="item === media[0]" [muted]="true" playsinline type="video/mp4" loop>
+              <source [src]="item.src">
+            </video>
+          </div>
+          <div class="desc color-primary" [style.border-top]="item.title == undefined ?  null : '1px solid rgb(208, 255, 0)'">
+            <h2 class="fw-700">{{item.title! | translate}}</h2>
+          </div>
+        </div>
+      }
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>

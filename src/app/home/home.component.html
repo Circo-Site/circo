@@ -1,0 +1,21 @@
+<app-header class="header" [class.fade-in]="loaded" [style.display]="loaded ? 'block' : 'none'" (headerOpen)="headerOpen = $event" [opened]="headerOpen" [class.hide]="!headerOpen" [headerType]="1"></app-header>
+@if (modal.visible === true) {
+    <app-modal-frame [autoplay]="true" [selectedVideo]="selectedVideo" [class]="theme == 'light' ? 'modal-frame light' : 'modal-frame'" [type]="modal.type" [close]="modal.type != 'video' && modal.type != 'bio'" (closeButtonEvent)="modal.visible = false">
+    </app-modal-frame>
+  }
+<img class="logo" routerLink="/home" [ngClass]="{'fade-in': loaded, 'moves-right': loaded}" src="assets/logo-circo.svg">
+<main [class]="theme == 'light' ? 'light' : ''" style="overflow: hidden;">
+    <div [class]="theme == 'light' ? 'content-container light' : 'content-container'">
+        @defer (when media.length !== 0) {
+            <app-caroussel
+                class="carousel-component"
+                [ngClass]="{'fade-in': loaded}"
+                [style.display]="loaded ? 'block' : 'none'"
+                [media]="media"
+                (selectedVideo)="openModal($event.toString())"
+            >
+            </app-caroussel>
+        }
+    </div>
+</main>
+<img class="loading" [class.fade-out]="loaded" src="/assets/simbolo-circo.svg" alt="simboloCircOs">

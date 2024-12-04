@@ -1,0 +1,192 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Estilo Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body, html {
+    background-color: black;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('assets/fonts/BEBASNEUE\ REGULAR.OTF') format('truetype'); /* Ajuste o caminho conforme necessário */
+    font-weight: normal;
+    font-style: normal;
+}
+
+ul {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1000;
+    top: -80px;
+    left: 80px;
+    width: 20%;
+    height: 100%;
+}
+
+.carousel-component {
+  height: 100%;
+  width: 100%;
+}
+
+.loading {
+  position: absolute;
+  z-index: 501;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  opacity: 100%;
+  height: 100px;
+  animation: spin 6s linear infinite;
+}
+
+video {
+  position: absolute; /* Mantém o vídeo dentro do carrossel */
+  top: 0;
+  width: 100%;
+  object-position: center;
+  height: 100%;
+  object-fit: cover; /* Garante que o vídeo preencha a área */
+}
+
+@media (max-width: 768px) {
+  /* Para telas de dispositivos móveis */
+  video {
+    position: fixed; /* Ocupa a tela toda */
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% da largura da viewport */
+    height: 100vh; /* 100% da altura da viewport */
+  }
+}
+
+.header {
+    position: absolute;
+    z-index: 150;
+    top: 0;
+    right: 10px;
+    width: 5%;
+    height: 100%;
+    padding: 0;
+}
+
+.header.hide {
+    position: absolute;
+    right: 10px;
+    width: 5%;
+    z-index: 1;
+    padding: 0;
+    background-color: transparent;
+}
+
+.content-container {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+
+.bg-primary {
+    background-color: rgb(208, 255, 0);
+}
+
+.color-primary {
+    color: rgb(208, 255, 0)
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.modal-frame {
+    position: absolute;
+    z-index: 200;
+    width: 100%;
+    height: 0;
+    animation: modalAnimation 0.33s forwards
+}
+
+select {
+    -webkit-appearance: none; /* Safari e Chrome */
+    -moz-appearance: none; /* Firefox */
+    appearance: none; /* Padrão */
+    background: transparent; /* Torna o fundo transparente */
+    border: none; /* Remove a borda */
+    padding: 0.5rem; /* Adiciona padding */
+    cursor: pointer; /* Define o cursor como pointer */
+    outline: none;
+}
+
+.hide {
+    position: absolute;
+    z-index: 500;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.fade-in {
+  animation: fade-in 2s ease-in forwards;
+}
+
+.moves-right {
+  transform: translateX(5%);
+  transition: transform 3s ease-in-out;
+}
+
+@keyframes spin {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes modalAnimation {
+    100%{
+        height: 100%;
+    }
+}
+
+@media (max-width: 960px) {
+    .header {
+        margin-right: 1rem;
+    }
+}

@@ -1,0 +1,24 @@
+<app-header class="header"  [opened]="headerOpen" [class.hide]="!headerOpen" [headerType]="2"></app-header>
+<img class="logo" routerLink="/home" src="assets/logo-circo.svg">
+<main>
+    <div [class]="theme == 'light' ? 'content-container light' : 'content-container'">
+        @for (diretor of diretores; track $index) {
+            @if(diretor.nome === hoverDirector.nome){
+                <div class="diretores">
+                    <video [routerLink]="diretor.routerLink" preload="auto" style="opacity: 0.8" autoplay [muted]="true" playsinline type="video/mp4" loop>
+                        <source [src]="diretor.filmes[0].srcVideo">
+                    </video>
+                </div>
+
+            }
+        }
+    </div>
+    <div [class]="theme == 'light' ? 'nomes light' : 'nomes'">
+        @for (item of diretores; track $index) {
+            <div class="nome"><p class="color-primary" (mouseover)="item.filmes.length == 0 ? null : hoverDirector = item" [routerLink]="[item.routerLink]">{{item.nome}}</p></div>
+        }
+    </div>
+    <div class="desc color-primary">
+    <h2 class="fw-700">{{hoverDirector.filmes[0].marca + " - " + hoverDirector.nome}}</h2>
+    </div>
+</main>

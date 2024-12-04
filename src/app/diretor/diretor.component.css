@@ -1,0 +1,195 @@
+*{
+    font-family: 'Bebas Neue';
+}
+
+.content-container {
+    position: absolute;
+    z-index: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 99%;
+    margin: 10rem 0.5rem 0 0.5rem;
+    gap: 1rem;
+    overflow: visible;
+}
+
+.bio{
+    position: absolute;
+    top: -10%;
+    left: 50px;
+    font-size: 30px;
+    font-family: 'Bebas Neue';
+}
+
+.logo-circo{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    padding-right: 2rem;
+    align-items: center;
+    width: 59%;
+}
+
+.director-bio {
+    display: flex;
+    width: 80%;
+    gap: 2rem;
+    flex-basis: 70%;
+}
+
+.director-bio img {
+    width: 300px;
+    height: 400px;
+}
+
+.director-bio p {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    flex-grow: 1;
+    font-size: 15px;
+}
+
+.content-header p {
+    cursor: pointer;
+}
+
+.content-container h1{
+
+    position: absolute;
+    top: -9.3%;
+    left: 45%;
+
+}
+.film-gallery {
+    display: flex;
+    gap: 0.45rem;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.film-content:hover {
+    transform: scale(1.05);
+}
+
+.film-content:hover .info{
+    margin-bottom: 0.75rem;
+}
+
+.film-content {
+  transition: 0.33s;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.info {
+    position: absolute;
+    z-index: 1;
+    bottom: 20%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.33s;
+}
+
+.info span {
+    font-size: 18px;
+}
+
+.film {
+  flex-basis: 33%;
+  min-width: 30%;
+  height: 24rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+@media (max-width: 1465px) {
+  .film {
+    flex-basis: 40%;
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 850px) {
+  .film {
+    flex-basis: 50%;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+    .info {
+        position: absolute;
+        z-index: 1;
+
+
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+
+        align-items: center;
+        transition: 0.33s;
+
+        width: 200px;
+    }
+    .info p {
+
+        margin: 0;
+        font-size: 18px;
+
+        text-align: center;
+
+    }
+    .info span {
+        font-size: 18px;
+        text-align: center;
+        width: 500px;
+
+    }
+    .director-bio {
+        display: block;
+
+        gap: 2rem;
+        flex-basis: 70%;
+    }
+    .director-bio p {
+
+        word-break: break-all;
+        overflow-wrap: break-word;
+        flex-grow: 1;
+        font-size: 12px;
+    }
+    .content-container h1{
+        font-size: 19px;
+        position: absolute;
+        top: -13%;
+        left: 43%;
+
+    }
+    .content-header p {
+        cursor: pointer;
+        font-size: 19px;
+        position: absolute;
+        top: -14%;
+    }
+
+
+}

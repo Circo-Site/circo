@@ -1,0 +1,95 @@
+img {
+    height: 60%;
+}
+
+.carousel {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.iframe {
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+    width: 100%;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 1rem;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 400;
+    font-family: 'Bebas Neue';
+}
+
+
+@media (max-width: 1800px) {
+
+    .desc {
+        display: flex;
+        flex-direction: column;
+       
+        width: 100%;
+        padding-top: 1rem;
+        align-items: center;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: 400;
+        font-family: 'Bebas Neue';
+    }
+
+    .desc h2 {
+        font-size: 2rem;
+    }
+
+    .desc p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .iframe {
+        overflow: hidden!important;
+        height: 100%;
+        width: 100%;
+        
+    }
+
+    .desc {
+       position: absolute;
+       left: 50%;
+       bottom: 100px;
+
+       width: 100%;
+    }
+
+    .desc h2 {
+        font-size: 1.2rem;
+    }
+
+    .desc p {
+        font-size: 1.5rem;
+    }
+
+    .logo{
+        width: 100px;
+    }
+    .carousel-control-prev-icon {
+        z-index: 1000;
+        
+    }
+}

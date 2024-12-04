@@ -1,0 +1,26 @@
+<app-header class="header" [class.hide]="!headerOpen" [headerType]="2"></app-header>
+@if (modal.visible === true) {
+  <app-modal-frame [autoplay]="true" [selectedVideo]="selectedVideo" [class]="theme == 'light' ? 'modal-frame light' : 'modal-frame'" [type]="modal.type" [diretor]="diretor" [close]="modal.type != 'video' && modal.type != 'bio'" (closeButtonEvent)="modal.visible = false; modal.type = ''">
+  </app-modal-frame>
+}
+<main>
+    <div [class]="theme == 'light' ? 'content-container color-primary light' : 'content-container color-primary'">
+        <div class="content-header">
+            <h1>{{diretor.nome.toLocaleUpperCase()}}</h1>
+            <p class="bio" [style.display]="diretor.bio == undefined ? 'none' : 'flex'" (click)="openBio()" style="cursor: pointer;">BIO</p>
+        </div>
+        <div class="film-gallery">
+            @for (item of diretor.filmes; track $index) {
+                <div class="film" (click)="chooseVideo(item.srcVideo)">
+                    <div class="film-content" [style.background-image]="'url(/' + translateThumbSrc(item.srcImagem) + ')'">
+                      <a class="color-primary">
+                        <div class="info">
+                          <span>{{item.marca}} - {{item.nome | translate}}</span>
+                        </div>
+                      </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</main>

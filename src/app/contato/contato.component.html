@@ -1,0 +1,20 @@
+<app-header  class="header"  [class.hide]="!headerOpen" [headerType]="2"></app-header>
+
+
+<main>
+<img class="img-contato" src="/assets/backstage-circo.png" alt="Imagem de Sobre">
+<div class="simbolo">
+  <img src="/assets/simbolo-circo.svg" alt="simboloCircOs">
+</div>
+  <div class="content-container">
+    <div class="initial-text color-primary">
+      <div class="numero"><p>+55 11 99157-2880</p></div>
+      <p>ATENDIMENTO&#64;circofilmes.com</p>
+      <h2 [innerHTML]="'ENTRE_EM_CONTATO' | translate " [style]="translate.currentLang == 'pt' ? 'font-size: 14rem' : 'font-size: 18rem'"></h2>
+      
+      <p>{{'ENDERECO' | translate}}</p>
+
+    </div>
+  </div>
+</main>
+

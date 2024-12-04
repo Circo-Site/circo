@@ -1,0 +1,17 @@
+<div [class]="theme == 'light' ? 'modal-container light' : 'modal-container'">
+    <div class="close-button" [style]="close ? 'display: none' : ''" (click)="closeButton()"><img src="assets/close_48dp_5F6368_FILL0_wght400_GRAD0_opsz48.svg"></div>
+    @if(type === 'video'){
+        <video [style]="{
+          width: selectedVideo.width == undefined ? '100%' : selectedVideo.width + 'px',
+          height: selectedVideo.height == undefined ? '100%' : selectedVideo.height + 'px'
+        }" controls playsinline type="video/mp4" [autoplay]="autoplay">
+          <source [src]="selectedVideo.srcVideo">
+        </video>
+    }
+    @else if(type === 'bio'){
+        <div class="director-bio">
+            <img [src]="diretor.srcFoto">
+            <p>{{diretor.bio! | translate}}</p>
+        </div>
+    }
+</div>

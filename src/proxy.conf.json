@@ -1,0 +1,12 @@
+
+{
+  "/api": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "changeOrigin": true,
+   "headers": {
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'sha256-WFy6BmODyKQq1MyqkXYwa6geGi2OAJSWeEYi5DDBNY8=' https://player.vimeo.com https://f.vimeocdn.com; frame-src https://player.vimeo.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.vimeocdn.com; connect-src 'self' https://fresnel.vimeocdn.com;"
+    },
+    "logLevel": "debug"
+  }
+}

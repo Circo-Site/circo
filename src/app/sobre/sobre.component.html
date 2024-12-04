@@ -1,0 +1,32 @@
+<app-header class="header" [headerType]="2"></app-header>
+
+<video class="video" preload="none" autoplay playsinline type="video/mp4" loop [muted]="true">
+  <source src="assets/videos/HOME.mp4">
+</video>
+
+
+<div class="principal">
+  <div class="page-nome">
+    <div class="block">
+      <div class="titulo">
+        <img src="/assets/simbolo-circo.svg" alt="simboloCircOs">
+        <h2 class="color-primary">{{'SOBRE' | translate}}</h2>
+      </div>
+
+      <p class="text-sobre">{{'SOBRE_DESC' | translate}}</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="content-container color-primary">
+
+    <div class="alberto">
+      <img src="/assets/alberto.webp">
+      <p>{{'ALBERTO_NOME' | translate}}</p>
+      <p style="text-decoration: underline; font-size: 15px; cursor: pointer" routerLink="/diretor/albertokhoury">{{'VER_MAIS' | translate}}</p>
+    </div>
+  </div>
+
+</div>
