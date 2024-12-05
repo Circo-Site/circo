@@ -15,6 +15,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
 
+  //Tentativa Deploy 1
+
   constructor(private translate : TranslateService){
     this.translate.setDefaultLang('pt');
     this.translate.use('pt');
