@@ -3,7 +3,7 @@
     <app-modal-frame [autoplay]="true" [selectedVideo]="selectedVideo" [class]="theme == 'light' ? 'modal-frame light' : 'modal-frame'" [type]="modal.type" [close]="modal.type != 'video' && modal.type != 'bio'" (closeButtonEvent)="modal.visible = false">
     </app-modal-frame>
   }
-<img class="logo" routerLink="/home" [ngClass]="{'fade-in': loaded, 'moves-right': loaded}" src="assets/logo-circo.svg">
+<img class="logo" routerLink="/" [ngClass]="{'fade-in': loaded, 'moves-right': loaded}" src="assets/logo-circo.svg">
 <main [class]="theme == 'light' ? 'light' : ''" style="overflow: hidden;">
     <div [class]="theme == 'light' ? 'content-container light' : 'content-container'">
         @defer (when media.length !== 0) {
