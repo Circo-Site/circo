@@ -12,7 +12,7 @@
         <div class="menu-list">
             <p class="toggle-symbol" [class.opened]="opened"  [style.display]="headerType == 2 ? 'none' : 'flex'" (click)="OpenHeader()"></p>
             <ul [class]="opened ? 'show' : 'hideMenu'" [style]="{'display': startOpened ? 'flex' : 'none'}">
-              <li routerLink="/">{{ 'INICIO' | translate }}</li>
+              <li routerLink="/home">{{ 'INICIO' | translate }}</li>
               <li routerLink="/sobre">{{ 'SOBRE' | translate }}</li>
               <li routerLink="/diretores">{{ 'DIRETORES' | translate }}</li>
               <li routerLink="/contato">{{'CONTATO' | translate }}</li>

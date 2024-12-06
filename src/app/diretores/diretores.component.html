@@ -1,5 +1,5 @@
 <app-header class="header"  [opened]="headerOpen" [class.hide]="!headerOpen" [headerType]="2"></app-header>
-<img class="logo" routerLink="/" src="assets/logo-circo.svg">
+<img class="logo" routerLink="/home" src="assets/logo-circo.svg">
 <main>
     <div [class]="theme == 'light' ? 'content-container light' : 'content-container'">
         @for (diretor of diretores; track $index) {
